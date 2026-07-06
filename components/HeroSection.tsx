@@ -74,8 +74,9 @@ export default function HeroSection() {
               animate="visible"
               className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-8 max-w-lg"
             >
-              VignyX is the AI-powered inventory platform built for Indian
-              medical shops, hospital pharmacies, and healthcare enterprises.
+              Just point your phone camera at any medicine box — AI reads
+              the label, fills in name, batch, expiry, and MRP automatically.
+              No barcode scanner. No manual entry. Built for Indian pharmacies.
             </motion.p>
 
             {/* CTA Buttons */}

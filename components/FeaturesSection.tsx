@@ -7,8 +7,8 @@ import { useRef } from "react";
 const features = [
   {
     icon: "📷",
-    title: "Scan & Stock In",
-    body: "Scan medicine barcode. Batch number, expiry date auto-fill. Select rack. Done in 30 seconds.",
+    title: "AI Label Scanning",
+    body: "Point your camera at any medicine box. AI reads the label — name, generic, batch, expiry, MRP — all filled in automatically. No barcode needed. Done in 30 seconds.",
   },
   {
     icon: "🔔",

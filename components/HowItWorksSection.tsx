@@ -15,7 +15,7 @@ const steps = [
     number: "02",
     icon: "📷",
     title: "Scan your medicines",
-    body: "Point camera at any medicine box. Details auto-fill from our database. Stock added in seconds.",
+    body: "Point your phone camera at the medicine box. AI reads the label and fills in name, batch number, expiry date, and MRP. No barcode, no typing. Stock added in seconds.",
   },
   {
     number: "03",
