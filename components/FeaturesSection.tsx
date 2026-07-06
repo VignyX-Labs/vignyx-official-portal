@@ -43,11 +43,6 @@ const additionalFeatures = [
     body: "Every medicine tracked by batch number and expiry date. Know exactly which batch is on which rack at all times.",
   },
   {
-    icon: "🗂️",
-    title: "Rack & Location Management",
-    body: "Assign medicines to racks when receiving stock. Find any medicine instantly — no more hunting through shelves.",
-  },
-  {
     icon: "🏷️",
     title: "Multi-Category Support",
     body: "Tablets, capsules, syrups, injections, vials, ampoules, drops, powders, ointments — every medicine category handled correctly.",
