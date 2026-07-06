@@ -13,7 +13,7 @@ const features = [
   {
     icon: "🔔",
     title: "WhatsApp Alerts",
-    body: "30 days before expiry, WhatsApp fires. Low stock? Instant alert. Morning digest every day at 8 AM.",
+    body: "90 days before expiry, WhatsApp fires. Low stock? Instant alert. Summary report every day.",
   },
   {
     icon: "🔄",

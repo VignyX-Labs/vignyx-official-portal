@@ -94,7 +94,7 @@ export default function HeroSection() {
                 Get Early Access — 1 Month Free
               </button>
               <button
-                onClick={() => handleScroll("#how-it-works")}
+                onClick={() => handleScroll("#scan-demo")}
                 className="btn-secondary text-base px-7 py-3.5 font-semibold w-full sm:w-auto justify-center"
               >
                 Watch Demo →
