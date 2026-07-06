@@ -84,12 +84,25 @@ export default function HowItWorksSection() {
           </div>
         </div>
 
-        {/* Bottom callout */}
+        {/* No hardware callout */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-14 bg-white border border-[#e2e8f0] rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+          className="mt-10 bg-amber-50 border border-amber-100 rounded-2xl p-6"
+        >
+          <p className="text-amber-900 font-bold text-base mb-1">No extra hardware. No extra cost.</p>
+          <p className="text-amber-700 text-[14px] leading-relaxed">
+            Most pharmacy software requires a separate barcode scanner. VignyX works with the phone already in your pocket — zero extra hardware, zero extra cost.
+          </p>
+        </motion.div>
+
+        {/* Bottom callout */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-6 bg-white border border-[#e2e8f0] rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
         >
           <div>
             <h3 className="text-xl font-bold text-[#0f172a] mb-1">
