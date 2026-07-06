@@ -202,9 +202,9 @@ function PhoneDemo() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="bg-amber-50 border border-amber-100 rounded-2xl p-5"
         >
-          <p className="text-amber-900 font-bold text-base mb-1">No hardware. No extra cost.</p>
+          <p className="text-amber-900 font-bold text-base mb-1">No extra hardware. No extra cost.</p>
           <p className="text-amber-700 text-[14px] leading-relaxed">
-            Competitors sell barcode scanners for <span className="font-bold">₹8,000–₹15,000</span>. VignyX reads any medicine label with the phone already in your pocket — no scanner needed, ever.
+            Most pharmacy software requires a separate barcode scanner. VignyX works with the phone already in your pocket — zero extra hardware, zero extra cost.
           </p>
         </motion.div>
       </div>
