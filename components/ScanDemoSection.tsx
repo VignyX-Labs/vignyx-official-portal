@@ -14,9 +14,9 @@ const fields = [
 ];
 
 const steps = [
-  { num: "01", title: "Point camera", desc: "At any medicine box — front or back, any angle" },
-  { num: "02", title: "AI reads the label", desc: "Name, batch, expiry, MRP — extracted in seconds" },
-  { num: "03", title: "Confirm & done", desc: "Review, edit if needed, add to stock in one tap" },
+  { num: "01", title: "Scan two sides", desc: "One photo of the name side, one of the barcode side. Done in 5 seconds." },
+  { num: "02", title: "AI reads both photos", desc: "Claude AI extracts name, generic name, batch, expiry, and MRP — automatically, from both images." },
+  { num: "03", title: "Confirm & done", desc: "Review, edit if needed, add to stock in one tap." },
 ];
 
 function PhoneDemo() {
