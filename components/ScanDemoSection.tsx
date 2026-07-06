@@ -14,8 +14,8 @@ const fields = [
 ];
 
 const steps = [
-  { num: "01", title: "Scan two sides", desc: "One photo of the name side, one of the barcode side. Done in 5 seconds." },
-  { num: "02", title: "AI reads both photos", desc: "Claude AI extracts name, generic name, batch, expiry, and MRP — automatically, from both images." },
+  { num: "01", title: "Scan two sides", desc: "One photo of the name side, one of the batch side. Done in seconds." },
+  { num: "02", title: "Camera reads both photos", desc: "We extract name, generic name, batch, expiry, and MRP — automatically, from both images." },
   { num: "03", title: "Confirm & done", desc: "Review, edit if needed, add to stock in one tap." },
 ];
 
