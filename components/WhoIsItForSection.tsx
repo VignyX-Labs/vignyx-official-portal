@@ -10,7 +10,7 @@ const customerTypes = [
     icon: "🏪",
     title: "Medical / Pharmacy Stores",
     points: [
-      "Single shop management",
+      "Inventory management",
       "Quick billing at counter",
       "Expiry tracking",
       "WhatsApp alerts",
