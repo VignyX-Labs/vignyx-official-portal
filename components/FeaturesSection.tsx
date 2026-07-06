@@ -40,42 +40,42 @@ const additionalFeatures = [
   {
     icon: "📦",
     title: "Batch & Expiry Tracking",
-    body: "Every medicine tracked by batch number and expiry date. Know exactly which batch is on which rack at all times.",
+    body: "Every batch tracked from the day it arrives to the day it's sold. See what expires when — before it becomes a loss.",
   },
   {
     icon: "🏷️",
-    title: "Multi-Category Support",
-    body: "Tablets, capsules, syrups, injections, vials, ampoules, drops, powders, ointments — every medicine category handled correctly.",
+    title: "Every Category, Done Right",
+    body: "Tablets, syrups, injections, vials, ampoules, drops — each category works the way it should. No workarounds.",
   },
   {
     icon: "📐",
-    title: "Pack Notation",
-    body: "Tracks 10×10, 10×15, and nested pack formats automatically. Strips per box, tablets per strip — inventory always in exact units.",
+    title: "Strip & Box Tracking",
+    body: "Sell by strip, box, or loose tablets. Tell VignyX how many strips are in a box — it handles the rest automatically.",
   },
   {
     icon: "🔍",
     title: "Smart Medicine Matching",
-    body: "Scan a medicine and VignyX finds it in your stock instantly — even with OCR typos or alternate brand names.",
+    body: "Scan any medicine and VignyX finds it in your inventory instantly — even if the brand name is slightly different.",
   },
   {
     icon: "➕",
-    title: "Quick Add for New Medicines",
-    body: "Medicine not in the database? Add it in seconds from the same scan screen. No interruption to your workflow.",
+    title: "New Medicine? Added in Seconds",
+    body: "Medicine not in your inventory yet? Add it right from the scan screen without stopping what you're doing.",
   },
   {
     icon: "👥",
     title: "Multi-user Access",
-    body: "Your staff can log in and manage stock from their own phones. All changes sync in real time.",
+    body: "Add your staff to the account. They manage stock from their phones, you see everything from yours.",
   },
   {
     icon: "🏥",
-    title: "Godown & Pharmacy Modes",
-    body: "Manage a central godown and distribute to multiple pharmacy branches — all from one account.",
+    title: "Godown & Pharmacy Together",
+    body: "Running a godown and a pharmacy? Manage both and transfer stock between them from one account.",
   },
   {
     icon: "💰",
-    title: "MRP & Margin Tracking",
-    body: "Track MRP per strip across batches. Know your margins. Never sell below cost by mistake.",
+    title: "MRP Tracked Per Batch",
+    body: "MRP is stored per batch, per strip. Always know what you paid and what you're selling for — no guessing.",
   },
 ];
 
