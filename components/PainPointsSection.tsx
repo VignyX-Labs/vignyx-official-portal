@@ -29,6 +29,30 @@ const painPoints = [
     body: "Medicine finishes without warning. Customer goes to competitor. 10–15 sales lost every month.",
     accentColor: "text-yellow-600",
   },
+  {
+    icon: "🗓️",
+    iconBg: "bg-purple-50",
+    iconBorder: "border-purple-100",
+    headline: "Audit takes 2–3 days every month",
+    body: "Counting every medicine shelf by shelf, cross-checking the register, finding mistakes, starting over. It should not take this long.",
+    accentColor: "text-purple-600",
+  },
+  {
+    icon: "📦",
+    iconBg: "bg-blue-50",
+    iconBorder: "border-blue-100",
+    headline: "Ordering from distributors is chaotic",
+    body: "Writing low-stock items on paper, calling each distributor separately, no record of what was ordered. One mistake and the wrong medicines arrive.",
+    accentColor: "text-blue-600",
+  },
+  {
+    icon: "⏰",
+    iconBg: "bg-rose-50",
+    iconBorder: "border-rose-100",
+    headline: "Near-expiry returns slip through",
+    body: "You only discover returnable stock after the window has closed. Distributors accept returns — but only if you catch it in time.",
+    accentColor: "text-rose-600",
+  },
 ];
 
 export default function PainPointsSection() {
@@ -47,7 +71,7 @@ export default function PainPointsSection() {
         >
           <h2 className="section-title mb-4">Sound familiar?</h2>
           <p className="section-subtitle max-w-xl mx-auto">
-            Every medical shop owner faces these problems. VignyX solves all three — automatically.
+            Every medical shop owner faces these problems. VignyX solves every one of them — automatically.
           </p>
         </motion.div>
 
@@ -86,7 +110,7 @@ export default function PainPointsSection() {
           <div className="inline-flex items-center gap-3 bg-indigo-50 border border-indigo-100 rounded-2xl px-6 py-4">
             <span className="text-2xl">✅</span>
             <p className="text-[#4338ca] font-semibold text-base">
-              VignyX eliminates all three — automatically, with zero effort.
+              VignyX eliminates all of these — automatically, with zero effort.
             </p>
           </div>
         </motion.div>
