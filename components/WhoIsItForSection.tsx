@@ -27,7 +27,7 @@ const customerTypes = [
       "Issue slips",
       "Consumption reports",
     ],
-    comingSoon: false,
+    comingSoon: true,
   },
   {
     id: "clinic",
@@ -39,7 +39,7 @@ const customerTypes = [
       "GST billing",
       "Quick setup",
     ],
-    comingSoon: false,
+    comingSoon: true,
   },
   {
     id: "distributor",
