@@ -18,7 +18,7 @@ const stats = [
   {
     icon: "📍",
     value: "All of India",
-    label: "Open to shops nationwide, with hands-on personal onboarding starting in Tirupati and Chennai.",
+    label: "Open to medical shops anywhere in India.",
   },
   {
     icon: "💰",
@@ -93,7 +93,7 @@ export default function StatsSection() {
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="w-2 h-2 bg-indigo-400 rounded-full" />
-                Tirupati & Chennai — Priority onboarding
+                20 shops — Limited spots left
               </span>
             </div>
           </div>

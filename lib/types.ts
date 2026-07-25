@@ -21,6 +21,7 @@ export interface ContactLeadPayload extends LeadTokenFields {
 
 export interface EarlyAccessLeadPayload extends LeadTokenFields {
   formType: "early_access";
+  name: string;
   phone: string;
   city?: string;
 }

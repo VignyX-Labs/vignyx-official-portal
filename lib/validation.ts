@@ -29,6 +29,7 @@ export const contactLeadSchema = z.object({
 
 export const earlyAccessLeadSchema = z.object({
   formType: z.literal("early_access"),
+  name: z.string().trim().min(2, "Please enter your name").max(100),
   phone: z
     .string()
     .trim()

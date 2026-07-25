@@ -10,6 +10,7 @@ import { trackEvent } from "@/lib/analytics";
 export default function EarlyAccessSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
@@ -19,10 +20,11 @@ export default function EarlyAccessSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!phone.trim()) return;
+    if (!name.trim() || !phone.trim()) return;
 
     const result = await submit({
       formType: "early_access",
+      name,
       phone,
       city,
       website,
@@ -84,7 +86,7 @@ export default function EarlyAccessSection() {
             No credit card. No commitment. Just a smarter medical shop.
           </p>
           <p className="text-indigo-200 text-sm mb-10">
-            Open to medical shops anywhere in India — we&apos;re just prioritizing hands-on, in-person onboarding in Tirupati and Chennai first.
+            Open to medical shops anywhere in India.
           </p>
 
           {/* Form */}
@@ -101,7 +103,7 @@ export default function EarlyAccessSection() {
               </p>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto" noValidate>
+            <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-3" noValidate>
               {/* Honeypot — hidden from real users, catches naive bots */}
               <div className="absolute -left-[9999px]" aria-hidden="true">
                 <label htmlFor="early-access-website">Website</label>
@@ -114,38 +116,50 @@ export default function EarlyAccessSection() {
                   onChange={(e) => setWebsite(e.target.value)}
                 />
               </div>
-              <input
-                type="tel"
-                placeholder="Your WhatsApp number"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-                className="flex-1 bg-white/15 border border-white/30 text-white placeholder-indigo-300 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-white/60 focus:bg-white/20 transition-all"
-              />
-              <input
-                type="text"
-                placeholder="Your city"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                className="sm:w-36 bg-white/15 border border-white/30 text-white placeholder-indigo-300 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-white/60 focus:bg-white/20 transition-all"
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                className="bg-white text-[#4338ca] font-bold px-6 py-3.5 rounded-xl text-base hover:bg-indigo-50 transition-colors duration-200 disabled:opacity-70 whitespace-nowrap flex items-center gap-2 justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4338ca]"
-              >
-                {loading ? (
-                  <>
-                    <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                    </svg>
-                    Joining...
-                  </>
-                ) : (
-                  "Get Early Access →"
-                )}
-              </button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  className="sm:flex-[2] bg-white/15 border border-white/30 text-white placeholder-indigo-300 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-white/60 focus:bg-white/20 transition-all"
+                />
+                <input
+                  type="tel"
+                  placeholder="Your WhatsApp number"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                  className="sm:flex-[3] bg-white/15 border border-white/30 text-white placeholder-indigo-300 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-white/60 focus:bg-white/20 transition-all"
+                />
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="text"
+                  placeholder="Your city"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  className="flex-1 bg-white/15 border border-white/30 text-white placeholder-indigo-300 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-white/60 focus:bg-white/20 transition-all"
+                />
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="bg-white text-[#4338ca] font-bold px-6 py-3.5 rounded-xl text-base hover:bg-indigo-50 transition-colors duration-200 disabled:opacity-70 whitespace-nowrap flex items-center gap-2 justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4338ca]"
+                >
+                  {loading ? (
+                    <>
+                      <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                      Joining...
+                    </>
+                  ) : (
+                    "Get Early Access →"
+                  )}
+                </button>
+              </div>
             </form>
           )}
 
