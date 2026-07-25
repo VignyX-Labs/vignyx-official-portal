@@ -30,11 +30,11 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply bg-[#4338ca] text-white px-6 py-3 rounded-[10px] font-semibold text-base hover:bg-[#3730a3] transition-colors duration-200 inline-flex items-center gap-2;
+    @apply bg-[#4338ca] text-white px-6 py-3 rounded-[10px] font-semibold text-base hover:bg-[#3730a3] transition-colors duration-200 inline-flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4338ca]/50 focus-visible:ring-offset-2;
   }
 
   .btn-secondary {
-    @apply bg-white text-[#4338ca] border border-[#4338ca] px-6 py-3 rounded-[10px] font-semibold text-base hover:bg-[#eef2ff] transition-colors duration-200 inline-flex items-center gap-2;
+    @apply bg-white text-[#4338ca] border border-[#4338ca] px-6 py-3 rounded-[10px] font-semibold text-base hover:bg-[#eef2ff] transition-colors duration-200 inline-flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4338ca]/50 focus-visible:ring-offset-2;
   }
 
   .section-padding {

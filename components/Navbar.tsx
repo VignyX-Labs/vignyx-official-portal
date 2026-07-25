@@ -2,19 +2,23 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { HiMenu, HiX } from "react-icons/hi";
 import VignyXLogo from "./VignyXLogo";
+import { trackEvent } from "@/lib/analytics";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "About", href: "#about" },
+  { label: "Features", href: "/#features" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "About", href: "/#about" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 16);
@@ -22,9 +26,14 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  // On the home page, intercept and smooth-scroll to the in-page section.
+  // On any other page, let the browser navigate to "/#section" normally —
+  // there's nothing on this page to scroll to.
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    if (!isHome) return;
+    e.preventDefault();
     setMenuOpen(false);
-    const el = document.querySelector(href);
+    const el = document.querySelector(href.replace("/", ""));
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -40,9 +49,10 @@ export default function Navbar() {
         <nav className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <a
-            href="#"
+            href="/"
             className="flex items-center gap-2.5 flex-shrink-0"
             onClick={(e) => {
+              if (!isHome) return;
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
@@ -59,10 +69,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(link.href);
-                }}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-sm font-medium text-slate-600 hover:text-[#4338ca] transition-colors duration-200"
               >
                 {link.label}
@@ -70,23 +77,13 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop CTAs */}
+          {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="#contact"
+              href="/#early-access"
               onClick={(e) => {
-                e.preventDefault();
-                handleNavClick("#contact");
-              }}
-              className="btn-secondary text-sm px-4 py-2"
-            >
-              Request Demo
-            </a>
-            <a
-              href="#early-access"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick("#early-access");
+                trackEvent("cta_click", { cta: "get_early_access", location: "navbar" });
+                handleNavClick(e, "/#early-access");
               }}
               className="btn-primary text-sm px-4 py-2"
             >
@@ -120,10 +117,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(link.href);
-                  }}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="px-3 py-3 text-base font-medium text-slate-700 hover:text-[#4338ca] hover:bg-indigo-50 rounded-lg transition-colors"
                 >
                   {link.label}
@@ -131,20 +125,10 @@ export default function Navbar() {
               ))}
               <div className="pt-3 flex flex-col gap-2 border-t border-slate-100 mt-2">
                 <a
-                  href="#contact"
+                  href="/#early-access"
                   onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("#contact");
-                  }}
-                  className="btn-secondary w-full justify-center text-sm"
-                >
-                  Request Demo
-                </a>
-                <a
-                  href="#early-access"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("#early-access");
+                    trackEvent("cta_click", { cta: "get_early_access", location: "navbar_mobile" });
+                    handleNavClick(e, "/#early-access");
                   }}
                   className="btn-primary w-full justify-center text-sm"
                 >

@@ -6,18 +6,22 @@ import { useRef } from "react";
 
 const stats = [
   {
-    value: "Built for India 🇮🇳",
+    icon: "🏥",
+    value: "Built for India",
     label: "Designed from the ground up for Indian healthcare regulations, GST, and WhatsApp workflows.",
   },
   {
+    icon: "🚀",
     value: "August 2026",
-    label: "Official product launch. Early access opens now — limited to first 20 shops.",
+    label: "Official product launch. Early access opens now — limited to the first 20 shops.",
   },
   {
-    value: "Tirupati & Chennai",
-    label: "Launching first in Tirupati and Chennai with personal onboarding for every customer.",
+    icon: "📍",
+    value: "All of India",
+    label: "Open to shops nationwide, with hands-on personal onboarding starting in Tirupati and Chennai.",
   },
   {
+    icon: "💰",
     value: "₹33/day",
     label: "Less than ₹33 a day. That's less than a pack of Dolo 650. For complete peace of mind.",
   },
@@ -38,8 +42,11 @@ export default function StatsSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="bg-[#f8fafc] border border-slate-100 rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform duration-300"
+              className="card text-center"
             >
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-50 to-[#eef2ff] rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto">
+                {stat.icon}
+              </div>
               <div className="text-xl font-bold text-[#4338ca] mb-2">
                 {stat.value}
               </div>
@@ -82,15 +89,11 @@ export default function StatsSection() {
             <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500">
               <span className="flex items-center gap-1.5">
                 <span className="w-2 h-2 bg-green-400 rounded-full" />
-                Tirupati — Accepting signups
+                All of India — Accepting signups
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 bg-green-400 rounded-full" />
-                Chennai — Accepting signups
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 bg-amber-400 rounded-full" />
-                Other cities — Waitlist
+                <span className="w-2 h-2 bg-indigo-400 rounded-full" />
+                Tirupati & Chennai — Priority onboarding
               </span>
             </div>
           </div>

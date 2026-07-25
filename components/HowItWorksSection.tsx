@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import DashboardMockup from "./DashboardMockup";
+import { trackEvent } from "@/lib/analytics";
 
 const steps = [
   {
@@ -14,8 +16,8 @@ const steps = [
   {
     number: "02",
     icon: "📷",
-    title: "Scan your medicines",
-    body: "Point camera at any medicine box. Details auto-fill from our database. Stock added in seconds.",
+    title: "Add your medicines",
+    body: "Scan the barcode, or snap a photo if there isn't one. Item, batch and expiry auto-fill instantly.",
   },
   {
     number: "03",
@@ -40,7 +42,7 @@ export default function HowItWorksSection() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 text-sm font-semibold px-4 py-2 rounded-full mb-4">
-            ⚡ Quick Setup
+            📷 See It In Action
           </div>
           <h2 className="section-title mb-4">Up and running in 3 minutes</h2>
           <p className="section-subtitle max-w-xl mx-auto">
@@ -48,40 +50,50 @@ export default function HowItWorksSection() {
           </p>
         </motion.div>
 
-        {/* Steps */}
-        <div className="relative">
-          {/* Connector line — desktop only */}
-          <div className="hidden lg:block absolute top-16 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-0.5 bg-gradient-to-r from-[#4338ca]/20 via-[#4338ca] to-[#4338ca]/20" />
-
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 relative">
+        {/* Steps + live demo */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Steps */}
+          <div className="space-y-10">
             {steps.map((step, i) => (
               <motion.div
                 key={step.number}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
-                className="flex flex-col items-center lg:items-center text-center"
+                className="flex items-start gap-5"
               >
                 {/* Step number + icon circle */}
-                <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-white border-2 border-[#4338ca] rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-indigo-100 z-10 relative">
+                <div className="relative flex-shrink-0 z-10">
+                  <div className="w-16 h-16 bg-white border-2 border-[#4338ca] rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-indigo-100 relative">
                     {step.icon}
                   </div>
-                  <span className="absolute -top-2.5 -right-2.5 w-7 h-7 bg-[#4338ca] text-white text-xs font-bold rounded-full flex items-center justify-center">
+                  <span className="absolute -top-2.5 -right-2.5 w-7 h-7 bg-[#4338ca] text-white text-xs font-bold rounded-full flex items-center justify-center z-20 ring-4 ring-[#f8fafc]">
                     {step.number}
                   </span>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-[#0f172a] mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed text-[15px] max-w-xs">
-                  {step.body}
-                </p>
+                <div>
+                  <h3 className="text-xl font-bold text-[#0f172a] mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed text-[15px] max-w-sm">
+                    {step.body}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Live demo mockup */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="flex justify-center"
+          >
+            <DashboardMockup />
+          </motion.div>
         </div>
 
         {/* Bottom callout */}
@@ -101,11 +113,12 @@ export default function HowItWorksSection() {
           </div>
           <button
             onClick={() => {
+              trackEvent("cta_click", { cta: "get_early_access", location: "how_it_works" });
               document.querySelector("#early-access")?.scrollIntoView({ behavior: "smooth" });
             }}
             className="btn-primary px-7 py-3.5 text-base flex-shrink-0 shadow-lg shadow-indigo-100"
           >
-            Get Early Access — Free
+            Get Early Access
           </button>
         </motion.div>
       </div>

@@ -3,12 +3,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 const features = [
   {
     icon: "📷",
     title: "Scan & Stock In",
-    body: "Scan medicine barcode. Batch number, expiry date auto-fill. Select rack. Done in 30 seconds.",
+    body: "Scan the barcode, or snap a photo if there isn't one. Batch number and expiry date auto-fill. Select rack. Done in 30 seconds.",
   },
   {
     icon: "🔔",
@@ -34,6 +35,28 @@ const features = [
     icon: "📊",
     title: "Reports & Analytics",
     body: "Sales report. Expiry report. Purchase register. ABC analysis. Excel export for your accountant.",
+  },
+  {
+    icon: "📉",
+    title: "Dead Stock Alerts",
+    body: "Flags stagnant, slow-moving stock automatically, so you can recover blocked capital before it becomes a total loss.",
+  },
+  {
+    icon: "✅",
+    title: "Verified Medicine Database",
+    body: "Every medicine is backed by a government-aligned drug database, so product details are always accurate.",
+  },
+  {
+    icon: "🔁",
+    title: "Smart Substitute Suggestions",
+    body: "When a medicine is out of stock, instantly suggests the correct alternate brand so you never lose the sale.",
+    comingSoon: true,
+  },
+  {
+    icon: "📦",
+    title: "Delivery Shortage Alerts",
+    body: "Checks supplier invoices against what's actually delivered and flags shortages automatically, before you pay.",
+    comingSoon: true,
   },
 ];
 
@@ -72,6 +95,13 @@ export default function FeaturesSection() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="group relative bg-white border border-[#e2e8f0] rounded-2xl p-6 hover:border-[#4338ca]/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
+              {/* Coming soon tag */}
+              {feature.comingSoon && (
+                <span className="absolute top-5 right-5 bg-slate-100 text-slate-500 text-[11px] font-semibold px-2.5 py-1 rounded-full">
+                  Coming soon
+                </span>
+              )}
+
               {/* Icon */}
               <div className="w-12 h-12 bg-gradient-to-br from-indigo-50 to-[#eef2ff] rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
@@ -100,6 +130,7 @@ export default function FeaturesSection() {
         >
           <button
             onClick={() => {
+              trackEvent("cta_click", { cta: "get_early_access", location: "features" });
               document.querySelector("#early-access")?.scrollIntoView({ behavior: "smooth" });
             }}
             className="btn-primary px-8 py-3.5 text-base shadow-lg shadow-indigo-100"

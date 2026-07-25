@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import DashboardMockup from "./DashboardMockup";
+import { trackEvent } from "@/lib/analytics";
 
 const trustBadges = [
-  { icon: "🔒", label: "Secure" },
-  { icon: "🇮🇳", label: "Made in India" },
-  { icon: "⚡", label: "Setup in 3 mins" },
-  { icon: "📱", label: "Works on Android" },
+  { icon: "🏥", label: "Made for Indian Pharmacies" },
+  { icon: "🔐", label: "Encrypted — Data Never Shared" },
+  { icon: "⚡", label: "3-Minute Setup" },
+  { icon: "📱", label: "Android Ready" },
+  { icon: "☁️", label: "Cloud Backup" },
 ];
 
 const fadeUp = {
@@ -74,8 +75,10 @@ export default function HeroSection() {
               animate="visible"
               className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-8 max-w-lg"
             >
-              VignyX is the AI-powered inventory platform built for Indian
-              medical shops, hospital pharmacies, and healthcare enterprises.
+              Stop losing ₹3,000–₹5,000 a month to expired stock and missed
+              sales. VignyX is the AI-powered inventory platform built for
+              Indian medical shops, hospital pharmacies, and healthcare
+              enterprises.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -87,16 +90,13 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 mb-10"
             >
               <button
-                onClick={() => handleScroll("#early-access")}
+                onClick={() => {
+                  trackEvent("cta_click", { cta: "get_early_access", location: "hero" });
+                  handleScroll("#early-access");
+                }}
                 className="btn-primary text-base px-7 py-3.5 font-semibold shadow-lg shadow-indigo-200 w-full sm:w-auto justify-center"
               >
-                Get Early Access — 1 Month Free
-              </button>
-              <button
-                onClick={() => handleScroll("#how-it-works")}
-                className="btn-secondary text-base px-7 py-3.5 font-semibold w-full sm:w-auto justify-center"
-              >
-                Watch Demo →
+                Get Early Access
               </button>
             </motion.div>
 
@@ -120,14 +120,40 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right — App mockup */}
+          {/* Right — App teaser (full walkthrough lives in "See it in action" below) */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             className="relative flex justify-center lg:justify-end"
           >
-            <DashboardMockup />
+            <div className="relative w-[280px] sm:w-[320px] mx-auto">
+              <div className="bg-[#0f172a] rounded-[36px] p-3 shadow-2xl">
+                <div className="bg-gradient-to-br from-[#4338ca] to-[#6366f1] rounded-[28px] overflow-hidden aspect-[9/16] flex flex-col items-center justify-center px-8 text-center">
+                  <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center text-3xl mb-5">
+                    💊
+                  </div>
+                  <h3 className="text-white text-xl font-bold mb-2">
+                    Sharma Medical Store
+                  </h3>
+                  <p className="text-indigo-100 text-sm leading-relaxed">
+                    Stock, billing and expiry alerts — all from your phone.
+                  </p>
+                </div>
+              </div>
+              {/* Floating stat card */}
+              <div className="absolute -bottom-4 -right-4 sm:-right-8 bg-white rounded-2xl shadow-xl border border-slate-100 p-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center">
+                    <span className="text-lg">📈</span>
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-slate-500 font-medium">Saved this month</p>
+                    <p className="text-sm font-bold text-green-600">₹4,200</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

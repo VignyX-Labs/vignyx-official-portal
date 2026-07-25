@@ -1,17 +1,19 @@
 "use client";
 
 import VignyXLogo from "./VignyXLogo";
+import { CONTACT_EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/constants";
 
 const footerLinks = {
   Product: [
     { label: "Features", href: "#features" },
     { label: "Pricing", href: "#pricing" },
     { label: "How it works", href: "#how-it-works" },
-    { label: "Request Demo", href: "#contact" },
+    { label: "FAQ", href: "/#faq" },
   ],
   Company: [
     { label: "About", href: "#about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Support", href: "/contact" },
+    { label: "Refund Policy", href: "/refund-policy" },
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms-of-service" },
   ],
@@ -19,11 +21,11 @@ const footerLinks = {
 
 export default function Footer() {
   const handleNavClick = (href: string) => {
+    // Only intercept same-page anchors; cross-page hrefs (e.g. "/#faq", "/contact")
+    // should navigate normally so the browser handles the page load + scroll.
     if (href.startsWith("#")) {
       const el = document.querySelector(href);
       if (el) el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.location.href = href;
     }
   };
 
@@ -41,7 +43,7 @@ export default function Footer() {
               Intelligent Healthcare Operations
             </p>
             <p className="text-slate-500 text-sm mb-6">
-              Built with ❤️ in India 🇮🇳
+              Built with ❤️ in India
             </p>
             <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
               AI-powered inventory management for Indian medical shops, hospital pharmacies, and healthcare enterprises.
@@ -64,7 +66,7 @@ export default function Footer() {
                         handleNavClick(link.href);
                       }
                     }}
-                    className="text-slate-400 hover:text-white text-sm transition-colors duration-200"
+                    className="text-slate-400 hover:text-white text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded"
                   >
                     {link.label}
                   </a>
@@ -83,7 +85,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-slate-400 hover:text-white text-sm transition-colors duration-200"
+                    className="text-slate-400 hover:text-white text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded"
                   >
                     {link.label}
                   </a>
@@ -97,20 +99,20 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:vignyx.labs@gmail.com"
-                  className="text-slate-400 hover:text-white text-sm transition-colors duration-200"
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="text-slate-400 hover:text-white text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded"
                 >
-                  vignyx.labs@gmail.com
+                  {CONTACT_EMAIL}
                 </a>
               </li>
               <li>
                 <a
-                  href="https://instagram.com/vignyx.in"
+                  href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-white text-sm transition-colors duration-200"
+                  className="text-slate-400 hover:text-white text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded"
                 >
-                  @vignyx.in (Instagram)
+                  {INSTAGRAM_HANDLE} (Instagram)
                 </a>
               </li>
               <li className="text-slate-500 text-sm">
@@ -126,7 +128,7 @@ export default function Footer() {
             © 2026 VignyX Technologies Pvt Ltd. All rights reserved.
           </p>
           <p className="text-slate-600 text-sm">
-            Made in India 🇮🇳 for Indian Healthcare
+            Made in India for Indian Healthcare
           </p>
         </div>
       </div>

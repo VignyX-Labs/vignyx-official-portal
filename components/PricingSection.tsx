@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { HiCheck } from "react-icons/hi";
+import { trackEvent } from "@/lib/analytics";
 
 const plans = [
   {
@@ -16,7 +17,7 @@ const plans = [
     description: "Medical & Pharmacy Stores",
     features: [
       "Unlimited products",
-      "Barcode scanning",
+      "Barcode & photo scanning",
       "WhatsApp alerts",
       "Expiry tracking (FIFO)",
       "GST billing",
@@ -24,7 +25,7 @@ const plans = [
       "1 location",
       "2 users",
     ],
-    cta: "Start Free Trial",
+    cta: "Get Early Access",
     highlighted: false,
   },
   {
@@ -45,7 +46,7 @@ const plans = [
       "5 users",
       "Priority support",
     ],
-    cta: "Start Free Trial",
+    cta: "Get Early Access",
     highlighted: true,
   },
   {
@@ -89,6 +90,9 @@ export default function PricingSection() {
           <h2 className="section-title mb-4">Simple, honest pricing</h2>
           <p className="section-subtitle max-w-xl mx-auto">
             No hidden fees. No setup charges. Cancel anytime.
+          </p>
+          <p className="text-sm text-slate-500 max-w-xl mx-auto mt-3">
+            These are the rates that apply after our August 2026 launch. Join Early Access now and your first month is free, with your rate locked in at today&apos;s price.
           </p>
 
           {/* Toggle */}
@@ -211,20 +215,29 @@ export default function PricingSection() {
                 </ul>
 
                 {/* CTA */}
-                <button
-                  onClick={() => {
-                    document.querySelector("#early-access")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className={`w-full py-3.5 rounded-xl font-semibold text-base transition-all duration-200 ${
-                    plan.highlighted
-                      ? "bg-white text-[#4338ca] hover:bg-indigo-50"
-                      : plan.id === "hospital"
-                      ? "bg-[#4338ca] text-white hover:bg-[#3730a3]"
-                      : "bg-[#4338ca] text-white hover:bg-[#3730a3]"
-                  }`}
-                >
-                  {plan.cta}
-                </button>
+                {plan.id === "hospital" ? (
+                  <a
+                    href="/contact"
+                    onClick={() => trackEvent("cta_click", { cta: plan.cta, location: "pricing", plan: plan.id })}
+                    className="w-full py-3.5 rounded-xl font-semibold text-base transition-all duration-200 bg-[#4338ca] text-white hover:bg-[#3730a3] text-center"
+                  >
+                    {plan.cta}
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => {
+                      trackEvent("cta_click", { cta: plan.cta, location: "pricing", plan: plan.id });
+                      document.querySelector("#early-access")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className={`w-full py-3.5 rounded-xl font-semibold text-base transition-all duration-200 ${
+                      plan.highlighted
+                        ? "bg-white text-[#4338ca] hover:bg-indigo-50"
+                        : "bg-[#4338ca] text-white hover:bg-[#3730a3]"
+                    }`}
+                  >
+                    {plan.cta}
+                  </button>
+                )}
               </motion.div>
             );
           })}

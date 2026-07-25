@@ -3,23 +3,37 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import { useLeadForm } from "@/lib/useLeadForm";
+import { useToast } from "@/components/ui/Toast";
+import { trackEvent } from "@/lib/analytics";
 
 export default function EarlyAccessSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const { submit, loading } = useLeadForm();
+  const toast = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!phone.trim()) return;
-    setLoading(true);
-    // Simulate form submission
-    await new Promise((res) => setTimeout(res, 1200));
-    setLoading(false);
-    setSubmitted(true);
+
+    const result = await submit({
+      formType: "early_access",
+      phone,
+      city,
+      website,
+    });
+
+    if (result.success) {
+      setSubmitted(true);
+      trackEvent("lead_submit", { formType: "early_access" });
+    } else {
+      toast.error(result.error ?? "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -66,8 +80,11 @@ export default function EarlyAccessSection() {
           <p className="text-indigo-100 text-lg sm:text-xl leading-relaxed mb-3">
             Get 1 month completely free.
           </p>
-          <p className="text-indigo-200 text-base mb-10">
+          <p className="text-indigo-200 text-base mb-3">
             No credit card. No commitment. Just a smarter medical shop.
+          </p>
+          <p className="text-indigo-200 text-sm mb-10">
+            Open to medical shops anywhere in India — we&apos;re just prioritizing hands-on, in-person onboarding in Tirupati and Chennai first.
           </p>
 
           {/* Form */}
@@ -84,7 +101,19 @@ export default function EarlyAccessSection() {
               </p>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto" noValidate>
+              {/* Honeypot — hidden from real users, catches naive bots */}
+              <div className="absolute -left-[9999px]" aria-hidden="true">
+                <label htmlFor="early-access-website">Website</label>
+                <input
+                  id="early-access-website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                />
+              </div>
               <input
                 type="tel"
                 placeholder="Your WhatsApp number"
@@ -103,7 +132,7 @@ export default function EarlyAccessSection() {
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-white text-[#4338ca] font-bold px-6 py-3.5 rounded-xl text-base hover:bg-indigo-50 transition-colors duration-200 disabled:opacity-70 whitespace-nowrap flex items-center gap-2 justify-center"
+                className="bg-white text-[#4338ca] font-bold px-6 py-3.5 rounded-xl text-base hover:bg-indigo-50 transition-colors duration-200 disabled:opacity-70 whitespace-nowrap flex items-center gap-2 justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4338ca]"
               >
                 {loading ? (
                   <>
@@ -123,11 +152,11 @@ export default function EarlyAccessSection() {
           {/* Fine print */}
           <div className="mt-6 space-y-2">
             <p className="text-indigo-200 text-sm">
-              We&apos;ll personally onboard you. Tirupati and Chennai only for now.
+              We&apos;ll personally reach out to onboard you, wherever you are.
             </p>
-            <p className="text-indigo-300 text-sm flex items-center justify-center gap-1.5">
-              <span>🔒</span>
-              We never spam. Your number stays private.
+            <p className="text-indigo-100 text-sm flex items-center justify-center gap-1.5">
+              <span>🔐</span>
+              Encrypted, never shared. Your number stays private.
             </p>
           </div>
         </motion.div>
