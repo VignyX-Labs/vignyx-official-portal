@@ -6,6 +6,7 @@ import WhyChooseSection from "@/components/sections/WhyChooseSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import ComparisonSection from "@/components/sections/ComparisonSection";
+import DesktopDashboardSection from "@/components/sections/DesktopDashboardSection";
 import WhoIsItForSection from "@/components/WhoIsItForSection";
 import PricingSection from "@/components/PricingSection";
 import SecurityTrustSection from "@/components/sections/SecurityTrustSection";
@@ -34,6 +35,7 @@ export default function Home() {
       <FeaturesSection />
       <HowItWorksSection />
       <ComparisonSection />
+      <DesktopDashboardSection />
       <WhoIsItForSection />
       <ROICalculatorSection />
       <PricingSection />

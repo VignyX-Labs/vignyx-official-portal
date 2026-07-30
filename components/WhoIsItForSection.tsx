@@ -15,7 +15,6 @@ const customerTypes = [
       "Expiry tracking",
       "WhatsApp alerts",
     ],
-    comingSoon: false,
   },
   {
     id: "hospital",
@@ -27,7 +26,6 @@ const customerTypes = [
       "Issue slips",
       "Consumption reports",
     ],
-    comingSoon: false,
   },
   {
     id: "clinic",
@@ -39,19 +37,17 @@ const customerTypes = [
       "GST billing",
       "Quick setup",
     ],
-    comingSoon: false,
   },
   {
     id: "distributor",
     icon: "🚛",
     title: "Pharma Distributors",
     points: [
-      "Multi-location stock",
-      "Retailer management",
-      "Order tracking",
-      "Coming soon",
+      "Route & delivery planning",
+      "GST invoices, done right",
+      "Track dues automatically",
+      "Retailer order management",
     ],
-    comingSoon: true,
   },
 ];
 
@@ -88,22 +84,13 @@ export default function WhoIsItForSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                onClick={() => !type.comingSoon && setActiveId(type.id)}
+                onClick={() => setActiveId(type.id)}
                 className={`relative rounded-2xl p-6 border transition-all duration-300 cursor-pointer ${
                   isActive
                     ? "bg-[#4338ca] border-[#4338ca] shadow-xl shadow-indigo-200"
-                    : type.comingSoon
-                    ? "bg-slate-50 border-slate-200 cursor-default opacity-80"
                     : "bg-white border-[#e2e8f0] hover:border-[#4338ca]/30 hover:shadow-md hover:-translate-y-1"
                 }`}
               >
-                {/* Coming soon badge */}
-                {type.comingSoon && (
-                  <span className="absolute top-3 right-3 bg-slate-200 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
-                    Soon
-                  </span>
-                )}
-
                 {/* Icon */}
                 <div
                   className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4 ${
@@ -154,7 +141,7 @@ export default function WhoIsItForSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center text-slate-500 text-sm mt-8"
         >
-          Click on any card to explore. Distributor module launching Q4 2026.
+          Click on any card to explore.
         </motion.p>
       </div>
     </section>

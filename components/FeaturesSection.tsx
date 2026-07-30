@@ -29,12 +29,22 @@ const features = [
   {
     icon: "🛒",
     title: "One-tap Ordering",
-    body: "Low stock list auto-generated. One tap sends WhatsApp order to your distributor.",
+    body: "Low stock list auto-generated. One tap sends the order — approve it, and check it off as it arrives, with mismatches flagged before you pay.",
   },
   {
     icon: "📊",
     title: "Reports & Analytics",
-    body: "Sales report. Expiry report. Purchase register. ABC analysis. Excel export for your accountant.",
+    body: "Sales report. Expiry report. Purchase register. ABC analysis. Export to Excel, or share a PDF on WhatsApp in one tap.",
+  },
+  {
+    icon: "🔎",
+    title: "Never Lose a Sale Silently",
+    body: "When a medicine isn't in stock, VignyX logs it and shows you exactly what you're losing — so it's back on your shelf before the next customer asks.",
+  },
+  {
+    icon: "🗂️",
+    title: "Ready for Inspection, Always",
+    body: "Controlled-medicine sales are recorded exactly the way the law requires, so you're never scrambling to pull records together.",
   },
   {
     icon: "📉",
@@ -50,13 +60,16 @@ const features = [
     icon: "🔁",
     title: "Smart Substitute Suggestions",
     body: "When a medicine is out of stock, instantly suggests the correct alternate brand so you never lose the sale.",
-    comingSoon: true,
   },
   {
     icon: "📦",
     title: "Delivery Shortage Alerts",
     body: "Checks supplier invoices against what's actually delivered and flags shortages automatically, before you pay.",
-    comingSoon: true,
+  },
+  {
+    icon: "🧾",
+    title: "Prescription to Bill, Instantly",
+    body: "Show the prescription, and the bill is ready — medicines added, stock updated, nothing typed by hand. Faster billing, zero manual entry.",
   },
 ];
 
@@ -95,13 +108,6 @@ export default function FeaturesSection() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="group relative bg-white border border-[#e2e8f0] rounded-2xl p-6 hover:border-[#4338ca]/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
-              {/* Coming soon tag */}
-              {feature.comingSoon && (
-                <span className="absolute top-5 right-5 bg-slate-100 text-slate-500 text-[11px] font-semibold px-2.5 py-1 rounded-full">
-                  Coming soon
-                </span>
-              )}
-
               {/* Icon */}
               <div className="w-12 h-12 bg-gradient-to-br from-indigo-50 to-[#eef2ff] rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}

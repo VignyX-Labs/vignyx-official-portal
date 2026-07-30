@@ -12,7 +12,7 @@ const pillars = [
   {
     icon: "🔑",
     title: "Secure authentication",
-    body: "Every staff login is individually authenticated, so you always know who accessed what and when.",
+    body: "Every staff login is individually authenticated. Lost a phone or handed back a staff device? Sign it out from everywhere with one tap.",
   },
   {
     icon: "☁️",
@@ -22,12 +22,17 @@ const pillars = [
   {
     icon: "🧑‍💼",
     title: "Role-based access",
-    body: "Designed so owners, pharmacists, and counter staff each see only what's relevant to their role.",
+    body: "Add a staff login in seconds — their password reaches them on WhatsApp instantly. Owners, pharmacists, and counter staff each see only what's relevant to them.",
   },
   {
     icon: "🛡️",
     title: "Privacy-first architecture",
     body: "Your shop's data is yours. We never sell or share it — architected with privacy as a first-class requirement, not an afterthought.",
+  },
+  {
+    icon: "💬",
+    title: "Real help, real fast",
+    body: "Stuck on something? Raise it from right inside the app and hear back from a real person — not a bot.",
   },
 ];
 
@@ -53,7 +58,7 @@ export default function SecurityTrustSection() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
