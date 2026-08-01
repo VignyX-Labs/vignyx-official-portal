@@ -125,7 +125,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
-            © 2026 VignyX Technologies Pvt Ltd. All rights reserved.
+            © 2026 VignyX One Private Limited. All rights reserved.
           </p>
           <p className="text-slate-600 text-sm">
             Made in India for Indian Healthcare
