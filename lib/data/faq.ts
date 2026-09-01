@@ -49,4 +49,16 @@ export const faqItems: FAQItem[] = [
     answer:
       "VignyX is a cloud-based platform, so it needs an internet connection to sync stock and billing in real time. It's built to work smoothly on standard Indian mobile networks, including patchy 4G.",
   },
+  {
+    id: "multi-branch-godown",
+    question: "Does VignyX support multiple branches and a central Godown?",
+    answer:
+      "Yes. VignyX supports single pharmacies as well as multi-branch chains with a central Godown — branches can raise stock requests, a Godown fulfills them, and you can see inventory across every location you're authorized to see, from one account.",
+  },
+  {
+    id: "expiring-stock",
+    question: "How does VignyX handle expiring stock?",
+    answer:
+      "Batches are tracked in FEFO order — earliest-expiring stock first — so it's used or sold before newer stock. When a batch is close to expiry, VignyX helps you create and track a return with your supplier.",
+  },
 ];

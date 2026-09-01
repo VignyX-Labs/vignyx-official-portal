@@ -232,7 +232,7 @@ export default function DesktopMockup() {
         initial={{ opacity: 0, y: -12, scale: 0.96 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ delay: 1.5, duration: 0.5 }}
-        className="absolute -top-6 -right-2 sm:-right-8 bg-white rounded-2xl shadow-xl border border-slate-100 p-2.5 w-52"
+        className="absolute -top-6 right-0 sm:-right-8 bg-white rounded-2xl shadow-xl border border-slate-100 p-2.5 w-52"
       >
         <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wide px-1 mb-1.5">
           Notifications
@@ -258,7 +258,7 @@ export default function DesktopMockup() {
         initial={{ opacity: 0, y: 10, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ delay: 1.9, duration: 0.5 }}
-        className="absolute -bottom-4 -left-2 sm:-left-6 bg-white rounded-2xl shadow-xl border border-slate-100 p-3"
+        className="absolute -bottom-4 left-0 sm:-left-6 bg-white rounded-2xl shadow-xl border border-slate-100 p-3"
       >
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center">

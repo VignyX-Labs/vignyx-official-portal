@@ -10,6 +10,7 @@ import { trackEvent } from "@/lib/analytics";
 const navLinks = [
   { label: "Features", href: "/#features" },
   { label: "How it works", href: "/#how-it-works" },
+  { label: "Operations", href: "/#operating-model" },
   { label: "Desktop ERP", href: "/#dashboard" },
   { label: "Pricing", href: "/#pricing" },
   { label: "About", href: "/#about" },

@@ -62,9 +62,9 @@ export default function HeroSection() {
               animate="visible"
               className="text-5xl sm:text-6xl lg:text-[64px] font-bold text-[#0f172a] leading-[1.05] tracking-tight mb-6"
             >
-              Zero Stockouts.
+              Run Your Entire Pharmacy
               <br />
-              <span className="text-[#4338ca]">Zero Expiry</span> Losses.
+              <span className="text-[#4338ca]">Operation.</span> From One System.
             </motion.h1>
 
             {/* Sub-headline */}
@@ -75,10 +75,10 @@ export default function HeroSection() {
               animate="visible"
               className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-8 max-w-lg"
             >
-              Stop losing ₹3,000–₹5,000 a month to expired stock and missed
-              sales. VignyX is the AI-powered inventory platform built for
-              Indian medical shops, hospital pharmacies, and healthcare
-              enterprises.
+              Billing, inventory, expiry management, procurement, Godown
+              operations and branch replenishment — connected from purchase
+              to sale. Built for single pharmacies, multi-branch chains, and
+              central Godowns across India.
             </motion.p>
 
             {/* CTA Buttons */}

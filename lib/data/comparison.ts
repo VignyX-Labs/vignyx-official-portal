@@ -14,10 +14,10 @@ export const comparisonRows: ComparisonRow[] = [
     vignyx: "WhatsApp alerts before medicines expire or run out",
   },
   {
-    id: "fifo",
+    id: "fefo",
     criterion: "Batch rotation",
-    manual: "Manual FIFO, dependent on staff remembering",
-    vignyx: "Automatic FIFO — oldest batch always sells first",
+    manual: "Manual tracking, dependent on staff remembering expiry dates",
+    vignyx: "Automatic FEFO — earliest-expiring batch sells first",
   },
   {
     id: "reports",

@@ -24,7 +24,7 @@ export default function StructuredData() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web, Android",
     description:
-      "AI-powered inventory management platform for Indian medical shops, hospital pharmacies, and healthcare enterprises.",
+      "Connected pharmacy operations platform — billing, inventory, procurement, Godown operations and branch replenishment for Indian pharmacies and pharmacy chains.",
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "INR",

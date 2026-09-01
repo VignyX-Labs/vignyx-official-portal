@@ -19,7 +19,7 @@ const plans = [
       "Unlimited products",
       "Barcode & photo scanning",
       "WhatsApp alerts",
-      "Expiry tracking (FIFO)",
+      "Expiry tracking (FEFO)",
       "GST billing",
       "Basic reports",
       "1 location",
@@ -38,7 +38,7 @@ const plans = [
     description: "Growing pharmacies & small hospitals",
     features: [
       "Everything in Starter",
-      "AI demand forecasting",
+      "Godown & branch stock requests",
       "Smart reorder suggestions",
       "Advanced analytics",
       "Excel export",
@@ -59,6 +59,7 @@ const plans = [
     description: "Hospital pharmacies & nursing homes",
     features: [
       "Everything in Pro",
+      "Multi-Godown chain operations",
       "Ward requisitions",
       "Issue slips",
       "Department consumption",

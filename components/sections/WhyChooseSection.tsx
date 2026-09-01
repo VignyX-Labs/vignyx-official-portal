@@ -8,12 +8,12 @@ const benefits = [
   {
     icon: "💰",
     title: "Reduce expiry losses",
-    body: "Stop writing off ₹3,000–₹5,000 a month in expired stock. WhatsApp alerts and automatic FIFO catch it before it becomes a loss.",
+    body: "Stop writing off ₹3,000–₹5,000 a month in expired stock. WhatsApp alerts and automatic FEFO (earliest-expiring stock sold first) catch it before it becomes a loss.",
   },
   {
     icon: "📈",
     title: "Prevent stockouts",
-    body: "Never turn away a customer because a medicine ran out unnoticed. Low-stock alerts fire before the shelf goes empty.",
+    body: "Catch a medicine running low before a customer walks in empty-handed. Low-stock alerts and branch replenishment suggestions fire before the shelf goes empty.",
   },
   {
     icon: "⏱️",

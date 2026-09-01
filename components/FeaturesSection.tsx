@@ -18,8 +18,8 @@ const features = [
   },
   {
     icon: "🔄",
-    title: "FIFO Automatic",
-    body: "Oldest batch always sells first. Zero configuration needed. Zero expired medicines.",
+    title: "Automatic FEFO Rotation",
+    body: "The batch closest to expiry sells first, automatically — no manual tracking needed, so less stock expires unsold.",
   },
   {
     icon: "💊",
@@ -42,9 +42,9 @@ const features = [
     body: "When a medicine isn't in stock, VignyX logs it and shows you exactly what you're losing — so it's back on your shelf before the next customer asks.",
   },
   {
-    icon: "🗂️",
-    title: "Ready for Inspection, Always",
-    body: "Controlled-medicine sales are recorded exactly the way the law requires, so you're never scrambling to pull records together.",
+    icon: "🔁",
+    title: "Know What Each Branch Needs",
+    body: "VignyX checks current branch stock, what's already on the way, and Godown availability — then suggests exactly how much each branch should request.",
   },
   {
     icon: "📉",
@@ -53,13 +53,13 @@ const features = [
   },
   {
     icon: "✅",
-    title: "Verified Medicine Database",
-    body: "Every medicine is backed by a government-aligned drug database, so product details are always accurate.",
+    title: "Structured Medicine Database",
+    body: "Every medicine comes from a structured drug database, so product details stay consistent instead of being retyped by hand each time.",
   },
   {
-    icon: "🔁",
+    icon: "🔀",
     title: "Smart Substitute Suggestions",
-    body: "When a medicine is out of stock, instantly suggests the correct alternate brand so you never lose the sale.",
+    body: "When a medicine is out of stock, VignyX suggests an in-stock alternate brand, so a stockout doesn't have to mean a lost sale.",
   },
   {
     icon: "📦",
@@ -68,8 +68,8 @@ const features = [
   },
   {
     icon: "🧾",
-    title: "Prescription to Bill, Instantly",
-    body: "Show the prescription, and the bill is ready — medicines added, stock updated, nothing typed by hand. Faster billing, zero manual entry.",
+    title: "Prescription to Bill, Faster",
+    body: "Scan a prescription and VignyX matches every medicine against your stock and pre-fills the bill — you review and confirm. Far less manual typing at the counter.",
   },
 ];
 
@@ -91,7 +91,7 @@ export default function FeaturesSection() {
             Product Features
           </div>
           <h2 className="section-title mb-4">
-            Everything your medical shop needs
+            Everything your pharmacy needs, from counter to Godown
           </h2>
           <p className="section-subtitle max-w-2xl mx-auto">
             Built specifically for Indian healthcare — not adapted from a foreign product

@@ -24,20 +24,20 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   title: {
-    default: "VignyX — AI-Powered Healthcare Inventory Management for India",
+    default: "VignyX — Intelligent Pharmacy Operations Platform for India",
     template: "%s | VignyX",
   },
   description:
-    "Zero stockouts. Zero expiry losses. VignyX is the AI-powered inventory platform built for Indian medical shops, hospital pharmacies, and healthcare enterprises.",
+    "Billing, inventory, procurement, Godown operations and branch replenishment — connected in one system. For single pharmacies, multi-branch chains, and central Godowns across India.",
   keywords:
-    "medical shop inventory, pharmacy management software, healthcare inventory India, expiry tracking, WhatsApp alerts pharmacy",
+    "pharmacy management software, pharmacy billing software, pharmacy inventory management, medical store software, pharmacy chain management, godown management software, pharmacy stock management, expiry tracking, WhatsApp alerts pharmacy",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "VignyX — Intelligent Healthcare Operations",
+    title: "VignyX — Intelligent Pharmacy Operations",
     description:
-      "AI-powered inventory management for Indian medical shops and hospital pharmacies. Zero stockouts. Zero expiry losses.",
+      "Billing, inventory, procurement, Godown operations and branch replenishment — connected in one system for Indian pharmacies and pharmacy chains.",
     url: SITE_URL,
     siteName: "VignyX",
     locale: "en_IN",
@@ -47,15 +47,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "VignyX — AI-Powered Healthcare Inventory Management",
+        alt: "VignyX — Intelligent Pharmacy Operations Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "VignyX — AI Healthcare Inventory for India",
+    title: "VignyX — Intelligent Pharmacy Operations for India",
     description:
-      "Zero stockouts. Zero expiry losses. Built for Indian medical shops and pharmacies.",
+      "Billing, inventory, procurement, Godown operations and branch replenishment — connected in one system.",
     images: ["/og-image.png"],
   },
   robots: {

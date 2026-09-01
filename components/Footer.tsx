@@ -40,13 +40,13 @@ export default function Footer() {
               <span className="text-xl font-bold tracking-tight">VignyX</span>
             </div>
             <p className="text-slate-400 text-sm font-medium mb-1">
-              Intelligent Healthcare Operations
+              Intelligent Pharmacy Operations
             </p>
             <p className="text-slate-500 text-sm mb-6">
               Built with ❤️ in India
             </p>
             <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
-              AI-powered inventory management for Indian medical shops, hospital pharmacies, and healthcare enterprises.
+              Billing, inventory, procurement and Godown operations — connected in one system for Indian pharmacies and pharmacy chains.
             </p>
           </div>
 

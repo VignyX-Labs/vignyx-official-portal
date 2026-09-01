@@ -47,7 +47,7 @@ export default function PainPointsSection() {
         >
           <h2 className="section-title mb-4">Sound familiar?</h2>
           <p className="section-subtitle max-w-xl mx-auto">
-            Every medical shop owner faces these problems. VignyX solves all three — automatically.
+            Every medical shop owner faces these problems. Here&apos;s how VignyX is built to prevent each one.
           </p>
         </motion.div>
 
@@ -86,7 +86,7 @@ export default function PainPointsSection() {
           <div className="inline-flex items-center gap-3 bg-indigo-50 border border-indigo-100 rounded-2xl px-6 py-4">
             <span className="text-2xl">✅</span>
             <p className="text-[#4338ca] font-semibold text-base">
-              VignyX eliminates all three — automatically, with zero effort.
+              VignyX is built to prevent all three — with automatic alerts and stock rotation.
             </p>
           </div>
         </motion.div>
