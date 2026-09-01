@@ -91,7 +91,7 @@ export default function TermsOfService() {
               <h2 className="text-xl font-bold text-[#0f172a] mb-3">8. Contact</h2>
               <p>
                 For questions about these Terms:<br />
-                <strong>VignyX Technologies Pvt Ltd</strong><br />
+                <strong>VignyX One Private Limited</strong><br />
                 <a href="mailto:vignyx.labs@gmail.com" className="text-[#4338ca] hover:underline">vignyx.labs@gmail.com</a>
               </p>
             </section>

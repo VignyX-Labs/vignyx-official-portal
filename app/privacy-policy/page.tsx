@@ -34,6 +34,11 @@ export default function PrivacyPolicy() {
                   We also collect usage data such as inventory transactions, billing records, and system logs
                   to provide and improve our services.
                 </p>
+                <p className="mt-3">
+                  When you scan a medicine label or document in the app, the photo you capture or select is
+                  uploaded to our servers and processed to read product details for your inventory. These
+                  photos are used only to provide this feature.
+                </p>
               </section>
 
               <section>
@@ -85,7 +90,7 @@ export default function PrivacyPolicy() {
                 <h2 className="text-xl font-bold text-[#0f172a] mb-3">7. Contact</h2>
                 <p>
                   For privacy-related concerns, please contact us at:<br />
-                  <strong>VignyX Technologies Pvt Ltd</strong><br />
+                  <strong>VignyX One Private Limited</strong><br />
                   Tirupati, Andhra Pradesh, India<br />
                   <a href="mailto:vignyx.labs@gmail.com" className="text-[#4338ca] hover:underline">vignyx.labs@gmail.com</a>
                 </p>
