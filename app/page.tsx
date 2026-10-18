@@ -2,21 +2,22 @@ import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import PainPointsSection from "@/components/PainPointsSection";
-import OperatingModelSection from "@/components/sections/OperatingModelSection";
-import WhyChooseSection from "@/components/sections/WhyChooseSection";
+import WhoIsItForSection from "@/components/WhoIsItForSection";
+import AIBillReaderSection from "@/components/sections/AIBillReaderSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import OperatingModelSection from "@/components/sections/OperatingModelSection";
 import ReplenishmentSection from "@/components/sections/ReplenishmentSection";
 import GodownOperationsSection from "@/components/sections/GodownOperationsSection";
 import ChainInventorySection from "@/components/sections/ChainInventorySection";
-import ComparisonSection from "@/components/sections/ComparisonSection";
 import DesktopDashboardSection from "@/components/sections/DesktopDashboardSection";
 import TeamAccessSection from "@/components/sections/TeamAccessSection";
-import WhoIsItForSection from "@/components/WhoIsItForSection";
+import ComparisonSection from "@/components/sections/ComparisonSection";
+import WhyChooseSection from "@/components/sections/WhyChooseSection";
 import PricingSection from "@/components/PricingSection";
+import OffersSection from "@/components/sections/OffersSection";
 import SecurityTrustSection from "@/components/sections/SecurityTrustSection";
-import StatsSection from "@/components/StatsSection";
-import EarlyAccessSection from "@/components/EarlyAccessSection";
+import GetStartedSection from "@/components/GetStartedSection";
 import Footer from "@/components/Footer";
 
 // Code-split without ssr:false — these still render on the server for SEO/schema
@@ -33,23 +34,24 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <PainPointsSection />
-      <OperatingModelSection />
-      <WhyChooseSection />
+      <WhoIsItForSection />
+      <AIBillReaderSection />
       <FeaturesSection />
       <HowItWorksSection />
+      <OperatingModelSection />
       <ReplenishmentSection />
       <GodownOperationsSection />
       <ChainInventorySection />
-      <ComparisonSection />
       <DesktopDashboardSection />
       <TeamAccessSection />
-      <WhoIsItForSection />
+      <ComparisonSection />
+      <WhyChooseSection />
       <ROICalculatorSection />
       <PricingSection />
+      <OffersSection />
       <SecurityTrustSection />
-      <StatsSection />
       <FAQSection />
-      <EarlyAccessSection />
+      <GetStartedSection />
       <Footer />
     </main>
   );

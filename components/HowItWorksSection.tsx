@@ -10,20 +10,20 @@ const steps = [
   {
     number: "01",
     icon: "📱",
-    title: "Create your account",
-    body: "Sign up. Enter your shop name. Select number of racks. VignyX sets up your store automatically.",
+    title: "Tell us about your business",
+    body: "Pick your account type — pharmacy, hospital, godown, distributor, C&F or pharma company. We set up your account with you.",
   },
   {
     number: "02",
     icon: "📷",
-    title: "Add your medicines",
-    body: "Scan the barcode, or snap a photo if there isn't one. Item, batch and expiry auto-fill instantly.",
+    title: "Bring your stock across",
+    body: "Import your opening stock from a sheet, or let us migrate your data from Marg or other software. Then upload supplier bills and they're read for you.",
   },
   {
     number: "03",
     icon: "🔔",
-    title: "Relax. VignyX alerts you.",
-    body: "WhatsApp alerts for expiry and low stock. Morning digest every day. Never worry about stock again.",
+    title: "Bill, buy and get paid",
+    body: "Start billing the same day. VignyX tells you what to reorder, what's expiring and which bills are due — on WhatsApp.",
   },
 ];
 
@@ -42,11 +42,11 @@ export default function HowItWorksSection() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 text-sm font-semibold px-4 py-2 rounded-full mb-4">
-            📷 See It In Action
+            🚀 How It Works
           </div>
-          <h2 className="section-title mb-4">Up and running in 3 minutes</h2>
+          <h2 className="section-title mb-4">Live on VignyX in a day</h2>
           <p className="section-subtitle max-w-xl mx-auto">
-            No training required. No complicated setup. Just scan and go.
+            No hardware to buy. No long training. Our team helps you switch.
           </p>
         </motion.div>
 
@@ -108,17 +108,17 @@ export default function HowItWorksSection() {
               Ready to get started?
             </h3>
             <p className="text-slate-600">
-              First month completely free. No credit card required.
+              First month free. No card needed. Cancel anytime.
             </p>
           </div>
           <button
             onClick={() => {
-              trackEvent("cta_click", { cta: "get_early_access", location: "how_it_works" });
-              document.querySelector("#early-access")?.scrollIntoView({ behavior: "smooth" });
+              trackEvent("cta_click", { cta: "start_free_trial", location: "how_it_works" });
+              document.querySelector("#get-started")?.scrollIntoView({ behavior: "smooth" });
             }}
             className="btn-primary px-7 py-3.5 text-base flex-shrink-0 shadow-lg shadow-indigo-100"
           >
-            Get Early Access
+            Start Free Trial
           </button>
         </motion.div>
       </div>

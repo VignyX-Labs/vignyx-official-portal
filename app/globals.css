@@ -57,3 +57,13 @@ body {
     @apply text-lg sm:text-xl text-slate-600 font-normal leading-relaxed;
   }
 }
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

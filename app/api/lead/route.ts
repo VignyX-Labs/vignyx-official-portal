@@ -26,9 +26,9 @@ function buildEmailContent(
   }
 
   return {
-    subject: `New early access signup — ${data.name} (${data.city || "unknown city"})`,
+    subject: `New free trial signup — ${data.name} (${data.city || "unknown city"})`,
     html: `
-      <h2>New early access lead</h2>
+      <h2>New free trial lead</h2>
       <p><strong>Name:</strong> ${data.name}</p>
       <p><strong>WhatsApp:</strong> ${data.phone}</p>
       <p><strong>City:</strong> ${data.city || "Not provided"}</p>

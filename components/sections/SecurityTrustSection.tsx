@@ -86,7 +86,7 @@ export default function SecurityTrustSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center text-slate-500 text-sm mt-8"
         >
-          VignyX launches August 2026 — built with these principles from day one.
+          Your data is backed up, encrypted and yours — always.
         </motion.p>
       </div>
     </section>

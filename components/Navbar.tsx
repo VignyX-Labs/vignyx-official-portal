@@ -8,12 +8,12 @@ import VignyXLogo from "./VignyXLogo";
 import { trackEvent } from "@/lib/analytics";
 
 const navLinks = [
+  { label: "Solutions", href: "/#solutions" },
+  { label: "AI Bill Reader", href: "/#ai-bill-reader" },
   { label: "Features", href: "/#features" },
-  { label: "How it works", href: "/#how-it-works" },
-  { label: "Operations", href: "/#operating-model" },
-  { label: "Desktop ERP", href: "/#dashboard" },
+  { label: "Chains", href: "/#operating-model" },
   { label: "Pricing", href: "/#pricing" },
-  { label: "About", href: "/#about" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Navbar() {
@@ -66,7 +66,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop nav links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -80,22 +80,29 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <a
-              href="/#early-access"
+              href="/contact"
+              onClick={() => trackEvent("cta_click", { cta: "book_demo", location: "navbar" })}
+              className="text-sm font-semibold text-[#4338ca] hover:text-[#3730a3] px-3 py-2"
+            >
+              Book a Demo
+            </a>
+            <a
+              href="/#get-started"
               onClick={(e) => {
-                trackEvent("cta_click", { cta: "get_early_access", location: "navbar" });
-                handleNavClick(e, "/#early-access");
+                trackEvent("cta_click", { cta: "start_free_trial", location: "navbar" });
+                handleNavClick(e, "/#get-started");
               }}
               className="btn-primary text-sm px-4 py-2"
             >
-              Get Early Access
+              Start Free Trial
             </a>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 text-slate-600 hover:text-[#4338ca] transition-colors"
+            className="lg:hidden p-2 text-slate-600 hover:text-[#4338ca] transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -112,7 +119,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
+            className="lg:hidden bg-white border-t border-slate-100 overflow-hidden"
           >
             <div className="container-max py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -126,15 +133,18 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="pt-3 flex flex-col gap-2 border-t border-slate-100 mt-2">
+                <a href="/contact" className="btn-secondary w-full justify-center text-sm">
+                  Book a Demo
+                </a>
                 <a
-                  href="/#early-access"
+                  href="/#get-started"
                   onClick={(e) => {
-                    trackEvent("cta_click", { cta: "get_early_access", location: "navbar_mobile" });
-                    handleNavClick(e, "/#early-access");
+                    trackEvent("cta_click", { cta: "start_free_trial", location: "navbar_mobile" });
+                    handleNavClick(e, "/#get-started");
                   }}
                   className="btn-primary w-full justify-center text-sm"
                 >
-                  Get Early Access
+                  Start Free Trial
                 </a>
               </div>
             </div>

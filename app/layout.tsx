@@ -24,20 +24,20 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   title: {
-    default: "VignyX — Intelligent Pharmacy Operations Platform for India",
+    default: "VignyX — AI-Powered Pharmacy & Pharma Cloud for India",
     template: "%s | VignyX",
   },
   description:
-    "Billing, inventory, procurement, Godown operations and branch replenishment — connected in one system. For single pharmacies, multi-branch chains, and central Godowns across India.",
+    "Billing, stock, AI bill reading, purchase orders, distributor payments and GST — in one cloud. For pharmacies, chains, hospitals, godowns, distributors, C&F agents and pharma companies across India.",
   keywords:
-    "pharmacy management software, pharmacy billing software, pharmacy inventory management, medical store software, pharmacy chain management, godown management software, pharmacy stock management, expiry tracking, WhatsApp alerts pharmacy",
+    "pharmacy software, pharmacy billing software, medical store software, AI invoice reader pharmacy, pharmacy inventory management, pharmacy chain software, pharma distributor software, C&F agent software, hospital pharmacy software, GST billing pharmacy, Marg alternative",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "VignyX — Intelligent Pharmacy Operations",
+    title: "VignyX — AI-Powered Pharmacy & Pharma Cloud",
     description:
-      "Billing, inventory, procurement, Godown operations and branch replenishment — connected in one system for Indian pharmacies and pharmacy chains.",
+      "Billing, stock, AI bill reading, purchasing, payments and GST — one connected cloud for Indian pharmacies, chains, hospitals and the pharma supply chain.",
     url: SITE_URL,
     siteName: "VignyX",
     locale: "en_IN",
@@ -47,15 +47,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "VignyX — Intelligent Pharmacy Operations Platform",
+        alt: "VignyX — AI-Powered Pharmacy & Pharma Cloud",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "VignyX — Intelligent Pharmacy Operations for India",
+    title: "VignyX — AI-Powered Pharmacy & Pharma Cloud for India",
     description:
-      "Billing, inventory, procurement, Godown operations and branch replenishment — connected in one system.",
+      "Billing, stock, AI bill reading, purchasing, payments and GST — one connected cloud for pharmacies and the pharma supply chain.",
     images: ["/og-image.png"],
   },
   robots: {

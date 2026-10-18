@@ -7,7 +7,7 @@ import { useLeadForm } from "@/lib/useLeadForm";
 import { useToast } from "@/components/ui/Toast";
 import { trackEvent } from "@/lib/analytics";
 
-export default function EarlyAccessSection() {
+export default function GetStartedSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [name, setName] = useState("");
@@ -41,7 +41,7 @@ export default function EarlyAccessSection() {
   return (
     <section
       className="section-padding bg-[#4338ca] relative overflow-hidden"
-      id="early-access"
+      id="get-started"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -68,25 +68,25 @@ export default function EarlyAccessSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/15 border border-white/20 text-white text-sm font-semibold px-4 py-2 rounded-full mb-8">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            Limited to 20 shops · 3 spots left
+            First month free · No card needed
           </div>
 
           {/* Headline */}
           <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-white leading-tight mb-6">
-            Be among the first
+            Start your
             <br />
-            <span className="text-indigo-200">20 shops</span>
+            <span className="text-indigo-200">free month today.</span>
           </h2>
 
           {/* Subtext */}
           <p className="text-indigo-100 text-lg sm:text-xl leading-relaxed mb-3">
-            Get 1 month completely free.
+            Leave your details and we&apos;ll set up your account with you.
           </p>
           <p className="text-indigo-200 text-base mb-3">
-            No credit card. No commitment. Just a smarter medical shop.
+            Pharmacy, hospital, godown, distributor, C&amp;F or pharma company — we&apos;ll configure VignyX for your business and help move your data across.
           </p>
           <p className="text-indigo-200 text-sm mb-10">
-            Open to medical shops anywhere in India.
+            Available across India. Our first 11 customers keep their founding price for life.
           </p>
 
           {/* Form */}
@@ -99,7 +99,7 @@ export default function EarlyAccessSection() {
               <div className="text-5xl mb-4">🎉</div>
               <h3 className="text-2xl font-bold text-white mb-2">You&apos;re in!</h3>
               <p className="text-indigo-100">
-                We&apos;ll personally reach out on WhatsApp within 24 hours to get you set up.
+                Our team will reach out on WhatsApp within 24 hours to set up your account.
               </p>
             </motion.div>
           ) : (
@@ -137,7 +137,7 @@ export default function EarlyAccessSection() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="text"
-                  placeholder="Your city"
+                  placeholder="Your city (optional)"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   className="flex-1 bg-white/15 border border-white/30 text-white placeholder-indigo-300 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-white/60 focus:bg-white/20 transition-all"
@@ -153,10 +153,10 @@ export default function EarlyAccessSection() {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                       </svg>
-                      Joining...
+                      Sending...
                     </>
                   ) : (
-                    "Get Early Access →"
+                    "Start Free Trial →"
                   )}
                 </button>
               </div>
@@ -166,7 +166,10 @@ export default function EarlyAccessSection() {
           {/* Fine print */}
           <div className="mt-6 space-y-2">
             <p className="text-indigo-200 text-sm">
-              We&apos;ll personally reach out to onboard you, wherever you are.
+              Prefer a walkthrough first?{" "}
+              <a href="/contact" className="underline underline-offset-2 text-white hover:text-indigo-100">
+                Book a demo
+              </a>
             </p>
             <p className="text-indigo-100 text-sm flex items-center justify-center gap-1.5">
               <span>🔐</span>

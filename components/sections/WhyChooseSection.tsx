@@ -18,17 +18,17 @@ const benefits = [
   {
     icon: "⏱️",
     title: "Save staff time",
-    body: "Scan instead of write. Bill in seconds instead of minutes. Give your team back hours every week.",
+    body: "Upload a supplier bill instead of typing it. Bill in seconds instead of minutes. Give your team back hours every week.",
   },
   {
     icon: "🚀",
     title: "Easy onboarding",
-    body: "No training sessions, no manuals. Your team is billing and scanning stock within the first day.",
+    body: "We set up your account with you and can migrate your data from Marg or other software. Your team is billing on day one.",
   },
   {
     icon: "🏷️",
-    title: "Affordable pricing",
-    body: "Plans start under ₹1,000/month — less than the cost of the losses VignyX helps you avoid.",
+    title: "Pays for itself",
+    body: "Plans start at ₹999/month — less than the expiry losses, missed sales and wrong supplier bills VignyX helps you catch.",
   },
   {
     icon: "🏥",

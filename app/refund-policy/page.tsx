@@ -19,14 +19,14 @@ export default function RefundPolicy() {
           <div className="mb-10">
             <span className="text-[#4338ca] text-sm font-semibold uppercase tracking-widest">Legal</span>
             <h1 className="text-4xl font-bold text-[#0f172a] mt-2 mb-4">Refund Policy</h1>
-            <p className="text-slate-500 text-sm">Last updated: July 2026</p>
+            <p className="text-slate-500 text-sm">Last updated: October 2026</p>
           </div>
 
           <div className="space-y-8 text-slate-700 leading-relaxed">
             <section>
               <h2 className="text-xl font-bold text-[#0f172a] mb-3">1. Free Trial</h2>
               <p>
-                Early access users receive their first month of VignyX completely free. No credit card
+                New customers receive their first month of VignyX completely free. No credit card
                 is required to start, and you owe nothing if you decide not to continue after the trial.
               </p>
             </section>

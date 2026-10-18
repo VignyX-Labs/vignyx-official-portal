@@ -44,13 +44,13 @@ export default function DesktopDashboardSection() {
               transition={{ duration: 0.6 }}
             >
               <div className="inline-flex items-center gap-2 bg-indigo-50 text-[#4338ca] text-sm font-semibold px-4 py-2 rounded-full mb-4">
-                🖥️ For Growing Businesses
+                🖥️ Web Dashboard
               </div>
               <h2 className="section-title mb-4">
                 Run the counter. Control the business.
               </h2>
               <p className="section-subtitle max-w-xl mb-10">
-                Your staff bills from the phone at the counter. You see everything — every branch, every rupee — from one screen, on any computer.
+                Your staff bills at the counter on phone or computer. You see everything — every branch, every bill, every rupee owed — from one screen, anywhere.
               </p>
             </motion.div>
 
@@ -86,22 +86,20 @@ export default function DesktopDashboardSection() {
             >
               <button
                 onClick={() => {
-                  trackEvent("cta_click", { cta: "get_early_access", location: "desktop_dashboard" });
-                  document.querySelector("#early-access")?.scrollIntoView({ behavior: "smooth" });
+                  trackEvent("cta_click", { cta: "start_free_trial", location: "desktop_dashboard" });
+                  document.querySelector("#get-started")?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="btn-primary px-8 py-3.5 text-base shadow-lg shadow-indigo-100 justify-center"
               >
-                Get Early Access
+                Start Free Trial
               </button>
-              <button
-                onClick={() => {
-                  trackEvent("cta_click", { cta: "watch_demo", location: "desktop_dashboard" });
-                  document.querySelector("#how-it-works")?.scrollIntoView({ behavior: "smooth" });
-                }}
+              <a
+                href="/contact"
+                onClick={() => trackEvent("cta_click", { cta: "book_demo", location: "desktop_dashboard" })}
                 className="btn-secondary px-8 py-3.5 text-base justify-center"
               >
-                <span>▶</span> Watch 2-Min Demo
-              </button>
+                Book a Demo
+              </a>
             </motion.div>
           </div>
 

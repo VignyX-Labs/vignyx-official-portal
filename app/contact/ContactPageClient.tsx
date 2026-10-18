@@ -16,16 +16,19 @@ const contactInfo = [
 ];
 
 const businessTypes = [
-  "Medical / Pharmacy Store",
-  "Hospital Pharmacy",
-  "Clinic / Nursing Home",
+  "Retail Pharmacy / Medical Store",
+  "Pharmacy Chain",
+  "Hospital Pharmacy / Nursing Home",
+  "Warehouse / Godown",
   "Pharma Distributor",
+  "C&F Agent",
+  "Pharma Company",
 ];
 
 const inventoryMethods = [
   "Manual register",
   "Excel / spreadsheet",
-  "Another software",
+  "Marg / another software",
   "None",
 ];
 

@@ -24,13 +24,13 @@ export default function StructuredData() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web, Android",
     description:
-      "Connected pharmacy operations platform — billing, inventory, procurement, Godown operations and branch replenishment for Indian pharmacies and pharmacy chains.",
+      "AI-powered cloud platform for Indian pharmacies, pharmacy chains, hospitals, godowns, distributors, C&F agents and pharma companies — billing, stock, AI bill reading, purchasing, payments and GST.",
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "INR",
-      lowPrice: "799",
-      highPrice: "4999",
-      offerCount: "3",
+      lowPrice: "999",
+      highPrice: "5999",
+      offerCount: "6",
     },
   };
 

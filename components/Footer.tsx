@@ -5,14 +5,17 @@ import { CONTACT_EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/constants"
 
 const footerLinks = {
   Product: [
-    { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "How it works", href: "#how-it-works" },
+    { label: "Solutions", href: "/#solutions" },
+    { label: "AI Bill Reader", href: "/#ai-bill-reader" },
+    { label: "Features", href: "/#features" },
+    { label: "Pricing", href: "/#pricing" },
+    { label: "How it works", href: "/#how-it-works" },
     { label: "FAQ", href: "/#faq" },
   ],
   Company: [
-    { label: "About", href: "#about" },
+    { label: "Book a Demo", href: "/contact" },
     { label: "Support", href: "/contact" },
+    { label: "Delete Account", href: "/delete-account" },
     { label: "Refund Policy", href: "/refund-policy" },
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms-of-service" },
@@ -40,13 +43,13 @@ export default function Footer() {
               <span className="text-xl font-bold tracking-tight">VignyX</span>
             </div>
             <p className="text-slate-400 text-sm font-medium mb-1">
-              Intelligent Pharmacy Operations
+              AI-Powered Pharmacy & Pharma Cloud
             </p>
             <p className="text-slate-500 text-sm mb-6">
               Built with ❤️ in India
             </p>
             <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
-              Billing, inventory, procurement and Godown operations — connected in one system for Indian pharmacies and pharmacy chains.
+              Billing, stock, AI bill reading, purchasing, payments and GST — one connected cloud for pharmacies, chains, hospitals, godowns, distributors, C&F agents and pharma companies.
             </p>
           </div>
 
@@ -125,7 +128,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
-            © 2026 VignyX One Private Limited. All rights reserved.
+            © {new Date().getFullYear()} VignyX One Private Limited. All rights reserved.
           </p>
           <p className="text-slate-600 text-sm">
             Made in India for Indian Healthcare

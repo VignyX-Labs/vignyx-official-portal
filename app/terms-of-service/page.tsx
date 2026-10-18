@@ -19,7 +19,7 @@ export default function TermsOfService() {
           <div className="mb-10">
             <span className="text-[#4338ca] text-sm font-semibold uppercase tracking-widest">Legal</span>
             <h1 className="text-4xl font-bold text-[#0f172a] mt-2 mb-4">Terms of Service</h1>
-            <p className="text-slate-500 text-sm">Last updated: May 2026</p>
+            <p className="text-slate-500 text-sm">Last updated: October 2026</p>
           </div>
 
           <div className="space-y-8 text-slate-700 leading-relaxed">
@@ -54,7 +54,7 @@ export default function TermsOfService() {
               <h2 className="text-xl font-bold text-[#0f172a] mb-3">4. Subscription and Billing</h2>
               <p>
                 VignyX operates on a subscription basis. Fees are billed monthly or annually as per the
-                selected plan. The first month is free for early access users. Subscriptions auto-renew
+                selected plan. The first month is free for new customers. All prices exclude applicable GST. Subscriptions auto-renew
                 unless cancelled before the renewal date.
               </p>
             </section>
